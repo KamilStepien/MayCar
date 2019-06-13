@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCar.StartPage">
+    <ContentPage.Content>
+   
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image  Source="Logo.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Button   CornerRadius="10" BackgroundColor= "#3f51b5"   TextColor="White" Margin="5,0,5,0" Text = "Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Clicked="start"/>
+            <Button  CornerRadius="10"   BackgroundColor= "#f44336"  TextColor="White"  Margin="5,0,5,0" Text = "Wyjdź" Grid.Row="2" Grid.Column="0"  Clicked="exit"/>
+            <Button   CornerRadius="10"  BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Pomiń" Grid.Row="2" Grid.Column="1"  Clicked="contnue"/>
+
+
+            </Grid>
+ 
+    </ContentPage.Content>
+</ContentPage>

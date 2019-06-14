@@ -1,17 +1,37 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyCar.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyCar
 {
     public partial class App : Application
     {
+        private static LocalDatabase localDB;
+        public static LocalDatabase LocalDB
+        {
+            get
+            {
+                if (localDB == null)
+                {
+                    var fileHelper = DependencyService.Get<IFileHelper>();
+                    var path = fileHelper.GetLocalFilepath("app.database");
+                    localDB = new Data.LocalDatabase(path);
+                }
+
+                return localDB;
+            }
+        }
+
+
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage( new StartPage());
+
         }
 
         protected override void OnStart()

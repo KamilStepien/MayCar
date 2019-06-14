@@ -4,9 +4,11 @@
              x:Class="MyCar.CreateEditCar">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Dodaj swój pojaz do aplikacji" />
+            <Entry x:Name="Name" Placeholder="Name" />
+            <Entry x:Name="Model" Placeholder="Model"  />
+            <Label x:Name="lblValidation" Text="Błedne dane" FontSize="Micro" TextColor="Red" IsVisible="False" />
+            <Button x:Name="AddVehicle" Text="Dodaj"  Clicked="AddVehicle_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

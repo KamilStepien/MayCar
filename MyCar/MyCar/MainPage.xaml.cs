@@ -14,8 +14,9 @@ namespace MyCar
             InitializeComponent();
         }
 
-        
-
-    
+         private async void PetrolCalculator_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PetrolCalculator());
+        }
     }
 }

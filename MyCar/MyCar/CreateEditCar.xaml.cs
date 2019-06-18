@@ -30,6 +30,8 @@ namespace MyCar
                 DateOfCreation = new DateTime(1989, 5, 19)
             }
             );
+
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

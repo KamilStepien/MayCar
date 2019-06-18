@@ -6,10 +6,8 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-       
+        <Button x:Name="petrolCalculator" Text="Kalkulator Bezyny"  Clicked="PetrolCalculator_Clicked" />
+
     </StackLayout>
 
 </ContentPage>

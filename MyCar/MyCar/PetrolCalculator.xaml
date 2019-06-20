@@ -4,9 +4,16 @@
              x:Class="MyCar.PetrolCalculator">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Średnie spalanie"  />
+            <Entry x:Name="entryAverageCombustion" Placeholder="5.0"  TextChanged="Label_TextChanged" />
+            <Label Text="Koszt paliwa "/>
+            <Entry x:Name="entryPriceOfPetrol" Placeholder="5.0" TextChanged="Label_TextChanged" />
+            <Label Text="Długość trasy" />
+            <Entry x:Name="entryNumberOfKilometer" Placeholder="120" TextChanged="Label_TextChanged" />
+            <Label Text="Dodatkowe koszty przejazdu" />
+            <Entry x:Name="entryAddedCost"  Placeholder="30" TextChanged="Label_TextChanged" />
+            <Label TextColor="Red" Text="{Binding ErrorMessage}"  IsVisible="{Binding ErroMessagIsVisible}"/>
+            <Label Text="{Binding PriceOfPetrol}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

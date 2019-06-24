@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCar.FillUpPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <Label Text="Data"  />
+            <DatePicker MinimumDate="{Binding MiniDate}"
+            MaximumDate="{Binding MaxDate}"
+            Date="{Binding MiniDate, Mode=TwoWay }" />
+            <Picker Title="Typ paliwa"
+            ItemsSource="{Binding TypOfPetrol}"
+            SelectedItem="{Binding SelectedPetrol}"
+            ></Picker>
+            <Label Text="Koszt"  />
+            <Entry Text="{Binding Price}" />
+            <Label Text="Cena za litr"  />
+            <Entry Text="{Binding PricePerLiter}"/>
+            <Label TextColor="Red" Text="{Binding ErrorMessage}"  IsVisible="{Binding ErroMessagIsVisible}"/>
+
+            <Button   Clicked="Add" BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Dodaj" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

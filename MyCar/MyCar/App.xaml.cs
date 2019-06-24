@@ -30,7 +30,7 @@ namespace MyCar
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new StartPage());
+            MainPage = new NavigationPage( new History());
 
         }
 

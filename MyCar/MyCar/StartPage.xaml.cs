@@ -29,7 +29,7 @@ namespace MyCar
         private async void start(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new CreateEditCar());
+            await Navigation.PushAsync(new History());
         }
     }
 }

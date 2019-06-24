@@ -1,13 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MyCar"
-             x:Class="MyCar.MainPage">
+             x:Class="MyCar.MainPage"
+             NavigationPage.HasNavigationBar="false">
+    <!--Pages can be added as references or inline-->
+  
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Button x:Name="petrolCalculator" Text="Kalkulator Bezyny"  Clicked="PetrolCalculator_Clicked" />
+    <ContentPage>
+       
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS, Android" Value="0,40,0,0" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+             <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+              
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
 
-    </StackLayout>
+            <Button   CornerRadius="10" BackgroundColor= "#3f51b5"   TextColor="White" Margin="5,0,5,0" Text = "Start" Grid.Row="0" Grid.Column="0"  />
+            <Button  CornerRadius="10"   BackgroundColor= "#f44336"  TextColor="White"  Margin="5,0,5,0" Text = "Wyjdź" Grid.Row="0" Grid.Column="1"  />
+            
 
-</ContentPage>
+
+        </Grid>
+            <Label Text="Red" FontSize="Medium" HorizontalOptions="Center" />
+            <BoxView Color="Red" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        
+    </ContentPage>
+    <ContentPage>
+        
+    </ContentPage>
+</CarouselPage>

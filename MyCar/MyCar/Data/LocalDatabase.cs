@@ -16,6 +16,7 @@ namespace MyCar.Data
         {
             database = new SQLiteAsyncConnection(filepath);
             database.CreateTableAsync<Vehicle>().Wait();
+            database.CreateTableAsync<Petrol>().Wait();
         }
      
       
@@ -24,13 +25,19 @@ namespace MyCar.Data
       {
           return await database.Table<Vehicle>().ToListAsync();
       }
-        
-     public async Task<List<T>> GetItemsAsync<T>() where T : class, new()
+
+        public async Task<List<Petrol>> GetPetrol()
+        {
+            return await database.Table<Petrol>().ToListAsync();
+        }
+
+        public async Task<List<T>> GetItemsAsync<T>() where T : class, new()
      {
          return await database.Table<T>().ToListAsync();
      }
-        
-     public async Task<T> GetItemByIdAsync<T>(int id) where T : class, ISqliteModel, new()
+  
+
+        public async Task<T> GetItemByIdAsync<T>(int id) where T : class, ISqliteModel, new()
      {
             return await database.Table<T>().Where(x => x.Id == id).FirstOrDefaultAsync();
      }

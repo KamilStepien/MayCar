@@ -3,20 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace MyCar
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : CarouselPage
     {
-        public MainPage()
+        public MainPage ()
         {
             InitializeComponent();
-        }
 
-         private async void PetrolCalculator_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PetrolCalculator());
+            var redContentPage = new ContentPage
+            {
+               
+                Content = new StackLayout
+                {
+                    Children = {
+                    new Label {
+                        Text = "Red",
+                        FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
+                        HorizontalOptions = LayoutOptions.Center
+                    },
+                    new BoxView {
+                        Color = Color.Red,
+                        WidthRequest = 200,
+                        HeightRequest = 200,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                    }
+                }
+                }
+            };
+            var greenContentPage = new ContentPage
+            {
+           
+                Content = new StackLayout
+                {
+               
+            }
+            };
+            var blueContentPage = new ContentPage
+            {
+                
+                Content = new StackLayout
+                {
+                
+            }
+            };
+
+            Children.Add(redContentPage);
+            Children.Add(greenContentPage);
+            Children.Add(blueContentPage);
+
         }
     }
 }

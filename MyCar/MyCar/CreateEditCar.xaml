@@ -4,11 +4,15 @@
              x:Class="MyCar.CreateEditCar">
     <ContentPage.Content>
         <StackLayout>
+            
             <Label Text="Dodaj swój pojaz do aplikacji" />
-            <Entry x:Name="Name" Placeholder="Name" />
-            <Entry x:Name="Model" Placeholder="Model"  />
+            <Image x:Name="image" Source="{Binding ImageSource}"/>
+            <Button x:Name="pickPhoto" Text="Pick Photo"/>
+            <Entry  Placeholder="Name"   Text="{Binding CarName}"/>
+            <Entry  Placeholder="Model"   Text="{Binding CarModel}"/>
             <Label x:Name="lblValidation" Text="Błedne dane" FontSize="Micro" TextColor="Red" IsVisible="False" />
-            <Button x:Name="AddVehicle" Text="Dodaj"  Clicked="AddVehicle_Clicked" />
+            <Button  Text="Dodaj"  Clicked="AddVehicle_Clicked" />
+            <Button Text="Pomin"  Clicked="Next_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

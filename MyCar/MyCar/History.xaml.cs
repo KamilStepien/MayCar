@@ -24,12 +24,32 @@ namespace MyCar
 
         private void Add(object sender, EventArgs e)
         {
-            _viewModel.DisplayMenu = true;
+            _viewModel.DisplayMenu = !_viewModel.DisplayMenu;
         }
 
         private  async void EnterFillUp(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FillUpPage());
+        }
+
+        private async void NaviToHistory(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new History());
+        }
+
+        private async void NaviToCars(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Cars());
+        }
+
+        private  void NaviToPetrol(object sender, EventArgs e)
+        {
+           
+        }
+
+        private  void NaviToTrip(object sender, EventArgs e)
+        {
+            
         }
 
         protected override async void OnAppearing()

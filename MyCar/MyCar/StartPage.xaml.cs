@@ -14,22 +14,23 @@ namespace MyCar
 	{
 		public StartPage ()
 		{
+
 			InitializeComponent ();
 		}
-        public async void exit(object sender, EventArgs e)
+        public  void exit(object sender, EventArgs e)
         {
 
         }
 
         public async void contnue(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new History());
         }
 
         private async void start(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new History());
+            await Navigation.PushAsync(new CreateEditCar());
         }
     }
 }

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace MyCar.Data
 {
@@ -25,6 +27,12 @@ namespace MyCar.Data
       {
           return await database.Table<Vehicle>().ToListAsync();
       }
+
+        internal async Task<Vehicle> GetStudentByID(int id)
+        {
+            return await database.Table<Vehicle>().Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
 
         public async Task<List<Petrol>> GetPetrol()
         {

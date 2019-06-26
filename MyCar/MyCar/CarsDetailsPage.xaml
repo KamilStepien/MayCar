@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCar.CarsDetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image VerticalOptions="Center" Margin="10,10,10,10" Source="{Binding Car.ImageSrc}" />
+            <Label Text="{Binding Car.DateOfCreation}"/>
+            <TableView>
+                <TableSection>
+                    <TextCell Detail="{Binding Car.Model}" Text="Model"  ></TextCell>
+                    <TextCell Detail="{Binding Car.Name}" Text="Nazwa"  ></TextCell>
+                   
+
+                </TableSection>
+            </TableView>
+            
+            
+      
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

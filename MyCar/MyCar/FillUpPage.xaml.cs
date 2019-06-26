@@ -46,7 +46,7 @@ namespace MyCar
                 _viewModel.Price = "";
                 _viewModel.PricePerLiter = "";
 
-                Navigation.PushAsync(new History());
+              
 
             }
             else

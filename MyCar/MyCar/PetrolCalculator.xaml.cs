@@ -22,7 +22,7 @@ namespace MyCar
             _viewModel = new PetrolCalculatorViewModel();
             BindingContext = _viewModel;
 
-            _viewModel.PriceOfPetrol = "10";
+            
             
            
 

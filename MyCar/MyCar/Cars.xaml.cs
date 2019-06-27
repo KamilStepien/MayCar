@@ -31,7 +31,7 @@ namespace MyCar
         private async void lvCars_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var vehicle = (Vehicle)e.Item;
-            var dbVehicle = await App.LocalDB.GetStudentByID(vehicle.Id);
+            var dbVehicle = await App.LocalDB.GetVehicleById(vehicle.Id);
             await Navigation.PushAsync(new CarsDetailsPage(dbVehicle));
         }
 

@@ -20,6 +20,7 @@ namespace MyCar
 		{
             InitializeComponent ();
             BindingContext = _viewModel;
+            fillData();
         }
 
         private void Add(object sender, EventArgs e)
@@ -30,6 +31,11 @@ namespace MyCar
         private  async void EnterFillUp(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new FillUpPage());
+        }
+
+        private async void EnterCreateTrip(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreateTripPage());
         }
 
         private async void NaviToHistory(object sender, EventArgs e)
@@ -52,13 +58,36 @@ namespace MyCar
             
         }
 
-        protected override async void OnAppearing()
-        {
-            var students = await App.LocalDB.GetPetrol();
-   
+        
 
-            lvPetrol.ItemsSource = students;
-      
+        protected async void  fillData ()
+        {
+            var history = await App.LocalDB.GetHistory();
+            Label label = new Label();
+            for (int i = history.Count-1; i >=0; i-- )
+            {
+                switch(history[i].Typ)
+                {
+                    case "petrol":
+                        var TmpPetrol = await App.LocalDB.GetPetrolById(history[i].Id);
+                         label = new Label { Text = TmpPetrol.TypeOfPetrol.ToString(), TextColor = Color.FromHex("#77d065"), FontSize = 20 };
+                       
+                        break;
+
+                    case "trip":
+                        var TmpTrip = await App.LocalDB.GetPetrolById(history[i].Id);
+                        label = new Label { Text = TmpTrip.TypeOfPetrol.ToString(), TextColor = Color.FromHex("#77d065"), FontSize = 20 };
+
+                        break;
+                }
+               
+                lvPetrol.Children.Add(label);
+              
+            }
+            
+
+
+           
         }
 
 

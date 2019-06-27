@@ -28,19 +28,30 @@ namespace MyCar
         
         private async void Add(object sender, EventArgs e)
         {
-            var petrol = await App.LocalDB.GetItemsAsync<Petrol>();
-            await DisplayAlert("Auta", $"Liczba zapisanych tankowań: {petrol.Count}", "OK");
+        
 
             if( _viewModel.Price != "" && _viewModel.PricePerLiter != "" && _viewModel.SelectedPetrol != "") 
             {
-                await App.LocalDB.SaveItemAsync(new Petrol()
+                Petrol petrolTmp = new Petrol()
                 {
                     TypeOfPetrol = _viewModel.SelectedPetrol,
                     Price = Convert.ToDouble(_viewModel.Price),
                     PricePerLiter = Convert.ToDouble(_viewModel.PricePerLiter),
                     DateOfCreation = _viewModel.SelectDate
-                }
-                );
+                };
+
+                await App.LocalDB.SaveItemAsync(petrolTmp);
+
+                await App.LocalDB.SaveItemAsync(new HistorySQL()
+                {
+                    Typ = "petrol",
+                    IdClass = petrolTmp.Id
+
+                });
+
+
+
+
                 _viewModel.ErroMessagIsVisible = false;
                 _viewModel.SelectedPetrol = "";
                 _viewModel.Price = "";

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyCar.Model
 {
-   public class Petrol:ISqliteModel
+   public class Petrol:Class, ISqliteModel
     {
         [SQLite.AutoIncrement, SQLite.PrimaryKey]
         public int Id { get; set; }

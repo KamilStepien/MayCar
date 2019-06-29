@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyCar.CreateTripPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Seconds}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10,10,10,10">
+            <TableView>
+                <TableSection>
+                    <EntryCell  Label="Nazwa" Text="{Binding TripName}"  Placeholder="Nazwa"></EntryCell>
+                    <EntryCell Label=" Ilość Kilometrów" Text="{Binding TripNumberOfKm}" Placeholder="Ilość kilometrów"></EntryCell>
+                    <EntryCell Label=" Cel podróży" Text="{Binding TripDestination}" Placeholder="Cel podróży"></EntryCell>
+                    <EntryCell Label="Miejsce startowe" Text="{Binding TripStartPoint}" Placeholder="Miejsce startowe"></EntryCell>   
+                </TableSection>
+            </TableView>
+            <Button  Text="Dodaj"  Clicked="AddTrip_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

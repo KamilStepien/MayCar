@@ -21,5 +21,7 @@ namespace MyCar
             BindingContext = _view;
             _view.Car = vehicle;
         }
-	}
+
+       
+    }
 }

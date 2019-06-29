@@ -18,8 +18,9 @@ namespace MyCar.Data
         {
             database = new SQLiteAsyncConnection(filepath);
             database.CreateTableAsync<Vehicle>().Wait();
-            database.CreateTableAsync<Petrol>().Wait();
             database.CreateTableAsync<HistorySQL>().Wait();
+            database.CreateTableAsync<Trip>().Wait();
+            database.CreateTableAsync<Petrol>().Wait();
             
         }
      
@@ -38,7 +39,10 @@ namespace MyCar.Data
         {
             return await database.Table<Petrol>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
-
+        internal async Task<Trip> GetTripById(int id)
+        {
+            return await database.Table<Trip>().Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
 
         public async Task<List<Petrol>> GetPetrol()
         {
@@ -46,7 +50,9 @@ namespace MyCar.Data
         }
         public async Task<List<HistorySQL>> GetHistory() 
         {
+           
             return await database.Table<HistorySQL>().ToListAsync();
+
         }
 
         public async Task<List<T>> GetItemsAsync<T>() where T : class, new()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MyCar.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyCar.Model;
 
 namespace MyCar
 {
@@ -18,9 +19,34 @@ namespace MyCar
             
 			InitializeComponent ();
             BindingContext = _view;
-            _view.Seconds = 100;
+            
 
         }
 
-	}
+        private async void AddTrip_Clicked(object sender, EventArgs e)
+        {
+            if(_view.TripName != "" && _view.TripDestination != "" && _view.TripStartPoint != "" && _view.TripNumberOfKm != 0)
+            {
+                Trip tripTmp = new Trip()
+                {
+                    Nazwa = _view.TripName,
+                    NumberOfKm = _view.TripNumberOfKm,
+                    Destination = _view.TripDestination,
+                    StartPoint = _view.TripStartPoint
+                };
+
+                await App.LocalDB.SaveItemAsync(tripTmp);
+
+                await App.LocalDB.SaveItemAsync(new HistorySQL()
+                {
+                    Typ = "trip",
+                    IdClass = tripTmp.Id
+
+                });
+
+                await Navigation.PushAsync(new MainPage());
+
+            }
+        }
+    }
 }

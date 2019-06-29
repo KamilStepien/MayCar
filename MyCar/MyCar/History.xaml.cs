@@ -13,14 +13,14 @@ namespace MyCar
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class History : ContentPage
-	{
+    {
         private HistoryViewModel _viewModel = new HistoryViewModel();
-
+        private int lastLenghtTabHistory = 0;
         public  History ()
 		{
             InitializeComponent ();
             BindingContext = _viewModel;
-            fillData();
+           
         }
 
         private void Add(object sender, EventArgs e)
@@ -59,37 +59,44 @@ namespace MyCar
         }
 
         
-
-        protected async void  fillData ()
+        protected async override  void OnAppearing()
         {
             var history = await App.LocalDB.GetHistory();
-            Label label = new Label();
-            for (int i = history.Count-1; i >=0; i-- )
+
+            if (lastLenghtTabHistory< history.Count)
             {
-                switch(history[i].Typ)
+
+                
+                Label label = new Label();
+                for (int i = history.Count - 1; i >= lastLenghtTabHistory; i--)
                 {
-                    case "petrol":
-                        var TmpPetrol = await App.LocalDB.GetPetrolById(history[i].Id);
-                         label = new Label { Text = TmpPetrol.TypeOfPetrol.ToString(), TextColor = Color.FromHex("#77d065"), FontSize = 20 };
-                       
-                        break;
+                    switch (history[i].Typ)
+                    {
+                        case "petrol":
+                            var TmpPetrol = await App.LocalDB.GetPetrolById(history[i].IdClass);
+                            label = new Label { Text = TmpPetrol.TypeOfPetrol.ToString(), TextColor = Color.FromHex("#77d065"), FontSize = 20 };
 
-                    case "trip":
-                        var TmpTrip = await App.LocalDB.GetPetrolById(history[i].Id);
-                        label = new Label { Text = TmpTrip.TypeOfPetrol.ToString(), TextColor = Color.FromHex("#77d065"), FontSize = 20 };
+                            break;
 
-                        break;
+                        case "trip":
+                            var TmpTrip = await App.LocalDB.GetTripById(history[i].IdClass);
+                            label = new Label { Text = TmpTrip.StartPoint, TextColor = Color.FromHex("#773265"), FontSize = 20 };
+
+                            break;
+                    }
+
+                    lvPetrol.Children.Add(label);
+
                 }
-               
-                lvPetrol.Children.Add(label);
-              
+                lastLenghtTabHistory = history.Count;
             }
+             
             
-
-
-           
         }
 
+
+
+       
 
     }
 }

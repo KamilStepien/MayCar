@@ -53,11 +53,8 @@ namespace MyCar
 
 
                 _viewModel.ErroMessagIsVisible = false;
-                _viewModel.SelectedPetrol = "";
-                _viewModel.Price = "";
-                _viewModel.PricePerLiter = "";
+                await Navigation.PushAsync(new MainPage());
 
-              
 
             }
             else

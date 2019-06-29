@@ -1,44 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage  xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyCar.MainPage"
-             NavigationPage.HasNavigationBar="false">
-    <!--Pages can be added as references or inline-->
-  
-
-    <ContentPage>
-       
-        <ContentPage.Padding>
-            <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="iOS, Android" Value="0,40,0,0" />
-            </OnPlatform>
-        </ContentPage.Padding>
-        <StackLayout>
-             <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="50" />
-              
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50" />
-                <ColumnDefinition Width="50" />
-            </Grid.ColumnDefinitions>
-
-            <Button   CornerRadius="10" BackgroundColor= "#3f51b5"   TextColor="White" Margin="5,0,5,0" Text = "Start" Grid.Row="0" Grid.Column="0"  />
-            <Button  CornerRadius="10"   BackgroundColor= "#f44336"  TextColor="White"  Margin="5,0,5,0" Text = "Wyjdź" Grid.Row="0" Grid.Column="1"  />
-            
-
-
-        </Grid>
-            <Label Text="Red" FontSize="Medium" HorizontalOptions="Center" />
-            <BoxView Color="Red" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage>
+             xmlns:local="clr-namespace:MyCar;assembly=MyCar"
+             x:Class="MyCar.MainPage">
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <local:History Title="Historia"></local:History>
+        <local:Cars Title="Pojazdy"></local:Cars>
         
-    </ContentPage>
-    <ContentPage>
-        
-    </ContentPage>
-</CarouselPage>
+    </TabbedPage.Children>
+</TabbedPage>

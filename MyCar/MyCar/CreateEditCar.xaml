@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyCar.CreateEditCar">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
             
             <Label Text="Dodaj swój pojaz do aplikacji" />
             <Image x:Name="image" Source="{Binding ImageSource}"/>
@@ -14,5 +15,6 @@
             <Button  Text="Dodaj"  Clicked="AddVehicle_Clicked" />
             <Button Text="Pomin"  Clicked="Next_Clicked" />
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>

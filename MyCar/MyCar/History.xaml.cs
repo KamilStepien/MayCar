@@ -38,27 +38,11 @@ namespace MyCar
             await Navigation.PushAsync(new CreateTripPage());
         }
 
-        private async void NaviToHistory(object sender, EventArgs e)
+        private async void EnterCreateDrive(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new History());
+            await Navigation.PushAsync(new CreateDrive());
         }
 
-        private async void NaviToCars(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Cars());
-        }
-
-        private  void NaviToPetrol(object sender, EventArgs e)
-        {
-           
-        }
-
-        private  void NaviToTrip(object sender, EventArgs e)
-        {
-            
-        }
-
-        
         protected async override  void OnAppearing()
         {
             var history = await App.LocalDB.GetHistory();

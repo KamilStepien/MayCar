@@ -7,6 +7,6 @@
     <TabbedPage.Children>
         <local:History Title="Historia"></local:History>
         <local:Cars Title="Pojazdy"></local:Cars>
-        
+        <local:RidesPage Title="Wycieczki"></local:RidesPage>
     </TabbedPage.Children>
 </TabbedPage>

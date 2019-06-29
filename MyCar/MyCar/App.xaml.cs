@@ -2,14 +2,30 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyCar.Data;
+using System.Threading;
+using System.Diagnostics;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyCar
 {
     public partial class App : Application
     {
-        
+        private static Stopwatch stopWatch;
         private static LocalDatabase localDB;
+
+        public static Stopwatch StopWatch
+        {
+            get
+            {
+                if(stopWatch is null)
+                {
+                    stopWatch = new Stopwatch();
+                }
+                return stopWatch;
+            }
+        }
+
+
         public static LocalDatabase LocalDB
         {
             get

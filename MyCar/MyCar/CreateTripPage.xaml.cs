@@ -32,7 +32,8 @@ namespace MyCar
                     Nazwa = _view.TripName,
                     NumberOfKm = _view.TripNumberOfKm,
                     Destination = _view.TripDestination,
-                    StartPoint = _view.TripStartPoint
+                    StartPoint = _view.TripStartPoint,
+                    Date = DateTime.Now
                 };
 
                 await App.LocalDB.SaveItemAsync(tripTmp);

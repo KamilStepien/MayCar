@@ -19,10 +19,13 @@ namespace MyCar
 		{
 			InitializeComponent ();
             BindingContext = _viewModel;
+            _viewModel.ErroMessagIsVisible = false;
+            _viewModel.CurrentDate = DateTime.Now;
             _typOfPetrol.Add("Bezyna");
             _typOfPetrol.Add("Ropa");
             _typOfPetrol.Add("LPG");
             _viewModel.TypOfPetrol = _typOfPetrol;
+            _viewModel.SelectedPetrol = _typOfPetrol[0];
         }
 
         
@@ -30,14 +33,14 @@ namespace MyCar
         {
         
 
-            if( _viewModel.Price != "" && _viewModel.PricePerLiter != "" && _viewModel.SelectedPetrol != "") 
+            if(!string.IsNullOrWhiteSpace(_viewModel.SelectedPetrol)) 
             {
                 Petrol petrolTmp = new Petrol()
                 {
                     TypeOfPetrol = _viewModel.SelectedPetrol,
                     Price = Convert.ToDouble(_viewModel.Price),
                     PricePerLiter = Convert.ToDouble(_viewModel.PricePerLiter),
-                    DateOfCreation = _viewModel.SelectDate
+                    DateOfCreation = _viewModel.CurrentDate
                 };
 
                 await App.LocalDB.SaveItemAsync(petrolTmp);
@@ -48,8 +51,6 @@ namespace MyCar
                     IdClass = petrolTmp.Id
 
                 });
-
-
 
 
                 _viewModel.ErroMessagIsVisible = false;

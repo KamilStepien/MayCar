@@ -13,8 +13,8 @@
                         <ViewCell>
                             <Grid>
                                 <Image  WidthRequest="10" Source="{Binding ImageSrc}" />
-                                <Label  Grid.Column="1" Text="{Binding Name}"/>
-                                <Label Grid.Column="2" Text="{Binding Model}" />
+                                <Label HorizontalTextAlignment="Center" Grid.Column="1" Text="{Binding Name}"/>
+                                <Label HorizontalTextAlignment="Center" Grid.Column="2" Text="{Binding Model}" />
                                 <Label Grid.Column="3" Text="{Binding DateOfCreation}" />
 
                             </Grid>

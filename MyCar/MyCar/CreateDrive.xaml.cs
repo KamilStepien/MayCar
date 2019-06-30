@@ -23,7 +23,7 @@ namespace MyCar
              {
                  Device.BeginInvokeOnMainThread(() =>
                  {
-                     _view.Seconds = App.StopWatch.Elapsed.Seconds;
+                     _view.Time = App.StopWatch.Elapsed;
                  });
                  return true;
              });
@@ -36,6 +36,14 @@ namespace MyCar
 
             App.StopWatch.Start();
            
+        }
+
+        private void SaveDrive(object sender, EventArgs e)
+        {
+
+            Navigation.PushAsync(new DriveAddOtherInformationsPage(App.StopWatch.Elapsed));
+            App.StopWatch.Reset();
+
         }
 
         private void Stop(object sender, EventArgs e)

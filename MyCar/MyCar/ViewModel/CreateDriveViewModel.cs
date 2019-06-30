@@ -6,17 +6,22 @@ namespace MyCar.ViewModel
 {
     class CreateDriveViewModel:BaseViewModel
     {
-        private int _seconds;
+        private TimeSpan _time;
 
-        public int Seconds
+
+
+       
+
+
+        public TimeSpan Time
         {
-            get { return _seconds; }
+            get { return _time; }
             set
             {
-                if (_seconds != value)
+                if (_time != value)
                 {
-                    _seconds = value;
-                    RaisePropertyChanged(nameof(Seconds));
+                    _time = value;
+                    RaisePropertyChanged(nameof(Time));
                 }
             }
         }

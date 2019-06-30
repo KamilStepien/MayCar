@@ -40,6 +40,7 @@ namespace MyCar
             BindingContext = _viewModel;
             _viewModel.IsEddit = true;
             _viewModel.CarModel = vehicle.Model;
+            _viewModel.CarMark = vehicle.Marka;
             _viewModel.CarName = vehicle.Name;
             _viewModel.ImageSource = vehicle.ImageSrc;
             _viewModel.DateOfCreation = vehicle.DateOfCreation;

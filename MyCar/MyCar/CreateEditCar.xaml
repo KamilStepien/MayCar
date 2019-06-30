@@ -19,15 +19,15 @@
                         <EntryCell Label=" Marka" Text="{Binding CarMark}" Placeholder="Marka samochodu"></EntryCell>
                         <EntryCell Label="Zbiornik Paliwa"   Keyboard="Numeric" Text="{Binding FuelTank}" Placeholder="Ilość paliwa w zbiorniku"></EntryCell>
                         <EntryCell Label="Srednie spalanie"  Keyboard="Numeric" Text="{Binding LonHundredtKm}" Placeholder=" Spalanie na 100 km"></EntryCell>
-                        <ViewCell>
-                            <StackLayout>
+                        <ViewCell  >
+                            <StackLayout >
                                 <Label Text="Przeglond do"  />
                                 <DatePicker  MinimumDate="{Binding CurrentDateTime}"
                                 Date="{Binding EndCarReview, Mode=TwoWay }" />
                             </StackLayout> 
                         </ViewCell>
-                        <ViewCell>
-                            <StackLayout>
+                        <ViewCell  Height="100">
+                            <StackLayout Margin="10,0">
                                 <Label Text="Ubezpeczenie do"  />
                                 <DatePicker  MinimumDate="{Binding CurrentDateTime}"
                                 Date="{Binding EndCarInsurance, Mode=TwoWay }" />

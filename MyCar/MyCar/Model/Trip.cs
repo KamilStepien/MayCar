@@ -12,6 +12,7 @@ namespace MyCar.Model
         public int NumberOfKm { get; set; }
         public string Destination { get; set; }
         public string StartPoint { get; set; }
+        public DateTime Date { get; set; }
 
     }
 }

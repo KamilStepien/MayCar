@@ -3,20 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyCar.History">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+            <StackLayout>
+
+                <Button   Margin="20,5,20,5"  VerticalOptions="End" HorizontalOptions="End"  BorderRadius="50"  Clicked="Add"   BackgroundColor= "#3f51b5"   TextColor="White"   Text = "+" />
+                <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End" Clicked="EnterFillUp" HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"    Margin="20,0,20,0"  Text = "Fill up" />
+                <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End"  Clicked="EnterCreateTrip" HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"    Margin="20,0,20,0" Text = "Trip" />
+
+                <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End"  Clicked="EnterCreateDrive"  HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"  Margin="20,0,20,0" Text = "Drive" />
 
 
-            <ScrollView>
-                <StackLayout x:Name="lvPetrol" >
-                
+
+                <StackLayout x:Name="lvPetrol"  >
+                  
+                </StackLayout>
+        
+            
             </StackLayout>
-                </ScrollView>
+        </ScrollView>
+        
 
-            <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End"  Clicked="EnterCreateDrive"  HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Drive" />
-            <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End"  Clicked="EnterCreateTrip" HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Trip" />
-            <Button IsVisible="{Binding DisplayMenu}" VerticalOptions="End" Clicked="EnterFillUp" HorizontalOptions="End" BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Fill up" />
-            <Button Margin="10,10,10,10"  VerticalOptions="End" HorizontalOptions="End"  BorderRadius="50"  Clicked="Add"   BackgroundColor= "#3f51b5"   TextColor="White"   Text = "+" />
-        </StackLayout>
-     
     </ContentPage.Content>
+    
 </ContentPage>

@@ -7,12 +7,11 @@ namespace MyCar.ViewModel
     class FillUpViewModel:BaseViewModel
     {
         List<string> _typOfPetrol = new List<string>();
-        DateTime _miniDate;
-        DateTime _maxDate;
+        DateTime _currentDate;
         DateTime _selectDate;
         string _selectedPetrol;
-        string _price;
-        string _pricePerLiter;
+        private double _price;
+        private double _pricePerLiter;
 
         private string _errorMessage = "Nie uzupełniono wszystkich pól";
         private bool _errorMessageIsVisible = false;
@@ -42,14 +41,13 @@ namespace MyCar.ViewModel
 
         public FillUpViewModel()
         {
-            ErroMessagIsVisible = false;
-            MaxDate = DateTime.Now;
-            MiniDate = MaxDate.AddDays(-7);
+          
+   
         }
 
        
 
-        public string Price
+        public double Price
         {
             get { return _price; }
             set
@@ -78,7 +76,7 @@ namespace MyCar.ViewModel
 
 
 
-        public string PricePerLiter
+        public double PricePerLiter
         {
             get { return _pricePerLiter; }
             set
@@ -94,32 +92,20 @@ namespace MyCar.ViewModel
 
 
 
-        public DateTime MaxDate
+        public DateTime CurrentDate
         {
-            get { return _maxDate; }
+            get { return _currentDate; }
             set
             {
-                if (_maxDate != value)
+                if (_currentDate != value)
                 {
-                    _maxDate = value;
-                    RaisePropertyChanged(nameof(MaxDate));
+                    _currentDate = value;
+                    RaisePropertyChanged(nameof(CurrentDate));
                 }
             }
         }
 
-        public DateTime MiniDate
-        {
-            get { return _miniDate; }
-            set
-            {
-                if (_miniDate != value)
-                {
-                    _miniDate = value;
-                    RaisePropertyChanged(nameof(MiniDate));
-                }
-            }
-        }
-
+     
         public DateTime SelectDate
         {
             get { return _selectDate; }

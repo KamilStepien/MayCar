@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace MyCar
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RidesPage : ContentPage
+	public partial class DriveAddOtherInformationsPage : ContentPage
 	{
-		public RidesPage ()
+		public DriveAddOtherInformationsPage (TimeSpan time)
 		{
 			InitializeComponent ();
 		}

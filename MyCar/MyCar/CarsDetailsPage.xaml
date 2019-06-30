@@ -9,9 +9,9 @@
             <Image VerticalOptions="Center" Margin="10,10,10,10" Source="{Binding Car.ImageSrc}" />
             <Label Text="{Binding Car.DateOfCreation}"/>
             
-            <TableView>
-                <TableSection>
-                    <TextCell Detail="{Binding Car.Name}" Text="Nazwa"  ></TextCell>
+            <TableView HorizontalOptions="Center" >
+                <TableSection  >
+                    <TextCell  Detail="{Binding Car.Name}" Text="Nazwa"  ></TextCell>
                     <TextCell Detail="{Binding Car.Model}" Text="Model"  ></TextCell>
                     <TextCell Detail="{Binding Car.Marka}" Text="Marka"  ></TextCell>
                     <TextCell Detail="{Binding Car.FuelTank}" Text="Zbiornik paliwa"  ></TextCell>

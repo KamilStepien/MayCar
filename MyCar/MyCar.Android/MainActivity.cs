@@ -9,6 +9,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+
+
 namespace MyCar.Droid
 {
     [Activity(Label = "MyCar", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -33,5 +35,6 @@ namespace MyCar.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }

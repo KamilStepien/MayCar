@@ -24,7 +24,7 @@ namespace MyCar
 
         public async void contnue(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new History());
+            await Navigation.PushAsync(new MainPage());
         }
 
         private async void start(object sender, EventArgs e)

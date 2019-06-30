@@ -13,12 +13,10 @@ namespace MyCar.Model
         public string Name { get; set; }
         public string Model { get; set; }
         public string Marka { get; set; }
-        public string ZbiornikPaliwa { get; set; }
-        public string SpalanieNaSto{ get; set; }
-        public DateTime KoniecPrzeglodu { get; set; }
-        public DateTime KoniecUbezpieczenia { get; set; }
-
-
+        public int FuelTank { get; set; }
+        public double LonHundredtKm{ get; set; }
+        public DateTime EndCarReview { get; set; }
+        public DateTime EndCarInsurance { get; set; }
         public DateTime DateOfCreation { get; set; }
         public string ImageSrc { get; set; }
         

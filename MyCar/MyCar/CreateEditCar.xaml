@@ -4,17 +4,47 @@
              x:Class="MyCar.CreateEditCar">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+         
             
-            <Label Text="Dodaj swój pojaz do aplikacji" />
-            <Image x:Name="image" Source="{Binding ImageSource}"/>
-            <Button x:Name="pickPhoto" Text="Pick Photo"/>
-            <Entry  Placeholder="Name"   Text="{Binding CarName}"/>
-            <Entry  Placeholder="Model"   Text="{Binding CarModel}"/>
-            <Label x:Name="lblValidation" Text="Błedne dane" FontSize="Micro" TextColor="Red" IsVisible="False" />
-            <Button  Text="Dodaj"  Clicked="AddVehicle_Clicked" />
-            <Button Text="Pomin"  Clicked="Next_Clicked" />
-        </StackLayout>
+                <StackLayout Margin="10,10,10,10">
+
+                <Label Text="Dodaj swój pojaz do aplikacji" VerticalOptions="Center"  />
+                <Image x:Name="image" Source="{Binding ImageSource}"/>
+                <Button Clicked ="pickPhoto" Text="Wybierz zdjecie"/>
+                <Button Clicked ="takePhoto" Text="Zrób zdjecie"/>
+                <TableView  >
+                    <TableSection >
+                        <EntryCell  Label="Nazwa"   Text="{Binding CarName}"  Placeholder="Wpisz nazwe samochodu"></EntryCell>
+                        <EntryCell Label=" Model" Text="{Binding CarModel}" Placeholder="Model samochodu"></EntryCell>
+                        <EntryCell Label=" Marka" Text="{Binding CarMark}" Placeholder="Marka samochodu"></EntryCell>
+                        <EntryCell Label="Zbiornik Paliwa"   Keyboard="Numeric" Text="{Binding FuelTank}" Placeholder="Ilość paliwa w zbiorniku"></EntryCell>
+                        <EntryCell Label="Srednie spalanie"  Keyboard="Numeric" Text="{Binding LonHundredtKm}" Placeholder=" Spalanie na 100 km"></EntryCell>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Przeglond do"  />
+                                <DatePicker  MinimumDate="{Binding CurrentDateTime}"
+                                Date="{Binding EndCarReview, Mode=TwoWay }" />
+                            </StackLayout> 
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Ubezpeczenie do"  />
+                                <DatePicker  MinimumDate="{Binding CurrentDateTime}"
+                                Date="{Binding EndCarInsurance, Mode=TwoWay }" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+                <Label TextColor="Red" Text="{Binding ErrorMessage}"  IsVisible="{Binding ErroMessagIsVisible}"/>
+                <Button  Text="Dodaj"  Clicked="AddVehicle_Clicked" />
+                <Button Text="Pomin"  Clicked="Next_Clicked" />
+               
+                    
+                    
+                  
+                </StackLayout>
+              
+    
             </ScrollView>
     </ContentPage.Content>
 </ContentPage>

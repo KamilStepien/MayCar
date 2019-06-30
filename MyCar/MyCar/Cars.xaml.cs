@@ -23,6 +23,7 @@ namespace MyCar
         protected override async void OnAppearing()
         {
             var vehicles = await App.LocalDB.GetVehicles();
+            
             _view.Vehicles = vehicles;
             lvCars.ItemTapped -= lvCars_ItemTapped;
             lvCars.ItemTapped += lvCars_ItemTapped;
@@ -35,9 +36,9 @@ namespace MyCar
             await Navigation.PushAsync(new CarsDetailsPage(dbVehicle));
         }
 
-        private async void AddCar_Clicked(object sender, EventArgs e)
+        private void AddCar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CreateEditCar());
+            Navigation.PushAsync(new CreateEditCar());
         }
     }
 }

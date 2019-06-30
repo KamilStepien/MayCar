@@ -22,6 +22,14 @@ namespace MyCar
             _view.Car = vehicle;
         }
 
-       
+        private void Edit_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateEditCar(_view.Car));
+        }
+        private void Back_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
+
     }
 }

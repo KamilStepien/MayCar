@@ -33,7 +33,7 @@ namespace MyCar
                 if (localDB == null)
                 {
                     var fileHelper = DependencyService.Get<IFileHelper>();
-                    var path = fileHelper.GetLocalFilepath("app.databasee");
+                    var path = fileHelper.GetLocalFilepath("app.dbe");
                     localDB = new Data.LocalDatabase(path);
                     
                 }
@@ -47,7 +47,7 @@ namespace MyCar
         public  App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new StartPage());
         }
   
       

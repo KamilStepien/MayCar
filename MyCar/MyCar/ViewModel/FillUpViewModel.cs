@@ -22,17 +22,6 @@ namespace MyCar.ViewModel
         public string ErrorMessage => _errorMessage;
 
 
-
-        
-
-
-        public FillUpViewModel()
-        {
-            ErroMessagIsVisible = false;
-            MaxDate = DateTime.Now;
-            MiniDate = MaxDate.AddDays(-7);
-        }
-
         public bool ErroMessagIsVisible
         {
             get
@@ -48,6 +37,17 @@ namespace MyCar.ViewModel
                 }
             }
         }
+
+
+
+        public FillUpViewModel()
+        {
+            ErroMessagIsVisible = false;
+            MaxDate = DateTime.Now;
+            MiniDate = MaxDate.AddDays(-7);
+        }
+
+       
 
         public string Price
         {

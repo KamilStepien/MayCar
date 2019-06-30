@@ -23,10 +23,9 @@ namespace MyCar.Data
             database.CreateTableAsync<Petrol>().Wait();
             
         }
-     
-      
-       
-      public async Task<List<Vehicle>> GetVehicles()
+
+
+        public async Task<List<Vehicle>> GetVehicles()
       {
           return await database.Table<Vehicle>().ToListAsync();
       }

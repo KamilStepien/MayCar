@@ -3,22 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyCar.CarsDetailsPage">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
+            
             <Image VerticalOptions="Center" Margin="10,10,10,10" Source="{Binding Car.ImageSrc}" />
             <Label Text="{Binding Car.DateOfCreation}"/>
+            
             <TableView>
                 <TableSection>
-                    <TextCell Detail="{Binding Car.Model}" Text="Model"  ></TextCell>
                     <TextCell Detail="{Binding Car.Name}" Text="Nazwa"  ></TextCell>
-                   
+                    <TextCell Detail="{Binding Car.Model}" Text="Model"  ></TextCell>
+                    <TextCell Detail="{Binding Car.Marka}" Text="Marka"  ></TextCell>
+                    <TextCell Detail="{Binding Car.FuelTank}" Text="Zbiornik paliwa"  ></TextCell>
+                   <TextCell Detail="{Binding Car.LonHundredtKm}" Text="Spanalnie na 100"  ></TextCell>
+                   <TextCell Detail="{Binding Car.EndCarReview}" Text="Przegląd do"  ></TextCell>
+                  <TextCell Detail="{Binding Car.EndCarInsurance}" Text="Ubezpieczenie do"  ></TextCell>
 
-                </TableSection>
+
+                    </TableSection>
             </TableView>
+                <Button  Text="Edytuj"  Clicked="Edit_Clicked" />
 
-      
+                <Button  Text="Cofnij"  Clicked="Back_Clicked" />
 
 
-
-        </StackLayout>
+            </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
+   
 </ContentPage>

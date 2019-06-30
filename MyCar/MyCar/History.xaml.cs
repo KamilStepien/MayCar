@@ -43,7 +43,7 @@ namespace MyCar
             await Navigation.PushAsync(new CreateDrive());
         }
 
-        protected async override  void OnAppearing()
+        protected override async void OnAppearing()
         {
             var history = await App.LocalDB.GetHistory();
 

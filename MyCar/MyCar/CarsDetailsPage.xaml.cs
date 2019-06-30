@@ -22,13 +22,18 @@ namespace MyCar
             _view.Car = vehicle;
         }
 
-        private void Edit_Clicked(object sender, EventArgs e)
+        private async void Edit_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CreateEditCar(_view.Car));
+            await Navigation.PushAsync(new CreateEditCar(_view.Car));
         }
-        private void Back_Clicked(object sender, EventArgs e)
+        private async void Delete_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+           await App.LocalDB.DeleteItemAsync(_view.Car);
+            await Navigation.PopAsync();
+        }
+        private async void Back_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
 
     }

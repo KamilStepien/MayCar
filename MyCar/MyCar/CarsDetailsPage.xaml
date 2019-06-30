@@ -23,7 +23,7 @@
                     </TableSection>
             </TableView>
                 <Button  Text="Edytuj"  Clicked="Edit_Clicked" />
-
+                <Button  Text="Usun"  Clicked="Delete_Clicked" />
                 <Button  Text="Cofnij"  Clicked="Back_Clicked" />
 
 

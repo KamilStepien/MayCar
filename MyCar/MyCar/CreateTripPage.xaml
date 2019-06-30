@@ -13,6 +13,8 @@
                 </TableSection>
             </TableView>
             <Button  Text="Dodaj"  Clicked="AddTrip_Clicked" />
+            <Button  Text="Cofnij"  Clicked="Back_Clicked" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

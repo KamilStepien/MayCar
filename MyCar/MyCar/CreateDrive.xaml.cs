@@ -13,6 +13,8 @@ namespace MyCar
 	public partial class CreateDrive : ContentPage
 	{
         private CreateDriveViewModel _view = new CreateDriveViewModel();
+        private DateTime start;
+        private DateTime end;
 		public CreateDrive ()
 		{
 			InitializeComponent ();
@@ -33,7 +35,8 @@ namespace MyCar
 
         private void Start(object sender, EventArgs e)
         {
-
+            App.StopWatch.Reset();
+            start = DateTime.Now;
             App.StopWatch.Start();
            
         }
@@ -41,15 +44,21 @@ namespace MyCar
         private void SaveDrive(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new DriveAddOtherInformationsPage(App.StopWatch.Elapsed));
+            Navigation.PushAsync(new DriveAddOtherInformationsPage(_view.Time , start , end));
             App.StopWatch.Reset();
 
         }
 
         private void Stop(object sender, EventArgs e)
         {
+            end = DateTime.Now;
             App.StopWatch.Stop();
            
+        }
+
+        private async void Back_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

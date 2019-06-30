@@ -5,13 +5,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Średnie spalanie"  />
-            <Entry x:Name="entryAverageCombustion" Placeholder="5.0"  TextChanged="Label_TextChanged" />
+            <Entry x:Name="entryAverageCombustion"  Keyboard="Numeric" Placeholder="5.0"  TextChanged="Label_TextChanged" />
             <Label Text="Koszt paliwa "/>
-            <Entry x:Name="entryPriceOfPetrol" Placeholder="5.0" TextChanged="Label_TextChanged" />
+            <Entry x:Name="entryPriceOfPetrol" Keyboard="Numeric" Placeholder="5.0" TextChanged="Label_TextChanged" />
             <Label Text="Długość trasy" />
-            <Entry x:Name="entryNumberOfKilometer" Placeholder="120" TextChanged="Label_TextChanged" />
+            <Entry x:Name="entryNumberOfKilometer" Keyboard="Numeric" Placeholder="120" TextChanged="Label_TextChanged" />
             <Label Text="Dodatkowe koszty przejazdu" />
-            <Entry x:Name="entryAddedCost"  Placeholder="30" TextChanged="Label_TextChanged" />
+            <Entry x:Name="entryAddedCost" Keyboard="Numeric" Placeholder="30" TextChanged="Label_TextChanged" />
             <Label TextColor="Red" Text="{Binding ErrorMessage}"  IsVisible="{Binding ErroMessagIsVisible}"/>
             <Label Text="{Binding PriceOfPetrol}"/>
         </StackLayout>

@@ -21,7 +21,8 @@ namespace MyCar.Data
             database.CreateTableAsync<HistorySQL>().Wait();
             database.CreateTableAsync<Trip>().Wait();
             database.CreateTableAsync<Petrol>().Wait();
-            
+            database.CreateTableAsync<Drive>().Wait();
+
         }
 
 
@@ -41,6 +42,11 @@ namespace MyCar.Data
         internal async Task<Trip> GetTripById(int id)
         {
             return await database.Table<Trip>().Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        internal async Task<Drive> GetDriveById(int id)
+        {
+            return await database.Table<Drive>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<List<Petrol>> GetPetrol()

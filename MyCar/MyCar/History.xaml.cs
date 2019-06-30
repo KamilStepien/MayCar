@@ -71,7 +71,7 @@ namespace MyCar
                             break;
 
                         case "trip":
-                            grid = new Grid { Margin = new Thickness(10,10) ,Padding = new Thickness() ,BackgroundColor = Color.FromHex("#ffd7cc") };
+                            grid = new Grid { Margin = new Thickness(10,10)  ,BackgroundColor = Color.FromHex("#ffd7cc") };
                             var TmpTrip = await App.LocalDB.GetTripById(history[i].IdClass);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF734D"), Text = "Wycieczka" }, 0, 3, 0, 1);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Nazwa: " + TmpTrip.Nazwa }, 0, 1);
@@ -80,7 +80,23 @@ namespace MyCar
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Odległość : " + TmpTrip.NumberOfKm + " km" }, 0, 2);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "5" }, 1, 2);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "6" }, 2, 2);
-                            grid.Children.Add(new Label { Margin = new Thickness(0, 30, 0, 0), HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF734D"), Text = TmpTrip.Date.ToString("dddd, dd MMMM yyyy") }, 0, 3, 2, 3);
+                            grid.Children.Add(new Label { Margin = new Thickness(0, 5, 0, 0), HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF734D"), Text = TmpTrip.Date.ToString("dddd, dd MMMM yyyy") }, 0, 3, 3, 4);
+
+                            stackLayout.Children.Add(grid);
+                            break;
+
+                        case "drive":
+                            grid = new Grid { Margin = new Thickness(10, 10), BackgroundColor = Color.FromHex("#ffe0cc") };
+                            var tmpDrive = await App.LocalDB.GetDriveById(history[i].IdClass);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF7211"), Text = "Drive" }, 0, 3, 0, 1);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Nazwa: " + tmpDrive.Nazwa }, 0, 1);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Miejsce startowe: " + tmpDrive.StartPoint }, 1, 1);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Odległość : " + tmpDrive.NumberOfKm + " km" }, 2, 1);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Rozpoczecie przejazdu : " + tmpDrive.StartTime.ToString() }, 0, 3, 2, 3);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Koniec przejazdu :" + tmpDrive.EndTime.ToString() }, 0, 3, 3, 4);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Czas przejzdu : "  + tmpDrive.timeSpan.ToString() }, 0, 3, 4, 5);
+                            grid.Children.Add(new Label { Margin = new Thickness(0, 5, 0, 0) ,  HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF7211"), Text = tmpDrive.Date.ToString("dddd, dd MMMM yyyy") }, 0, 3, 5, 6);
+
 
                             stackLayout.Children.Add(grid);
                             break;

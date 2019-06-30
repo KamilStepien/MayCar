@@ -4,9 +4,16 @@
              x:Class="MyCar.DriveAddOtherInformationsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <TableView>
+                <TableSection>
+                    <EntryCell  Label="Nazwa" Text="{Binding TripName}"  Placeholder="Nazwa"></EntryCell>
+                    <EntryCell Label=" Ilość Kilometrów"   Keyboard="Numeric" Text="{Binding TripNumberOfKm}" Placeholder="Ilość kilometrów"></EntryCell>
+                    <EntryCell Label="Miejsce startowe" Text="{Binding TripStartPoint}" Placeholder="Miejsce startowe"></EntryCell>
+                </TableSection>
+            </TableView>
+            <Label TextColor="Red" Text="{Binding ErrorMessage}"  IsVisible="{Binding ErrorMessagIsVisible}"/>
+            <Button  Clicked="CreateDrive"  BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Zapisz wyjazd" />
+            <Button  Text="Cofnij"  Clicked="Back_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

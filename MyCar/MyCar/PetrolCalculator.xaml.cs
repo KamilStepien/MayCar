@@ -32,16 +32,16 @@ namespace MyCar
 
          private  void Label_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var averageCombustion = entryAverageCombustion?.Text;
-            var priceOfPetrol = entryPriceOfPetrol?.Text;
-            var numberOfKilometer = entryNumberOfKilometer?.Text;
-            var addedCost = entryAddedCost?.Text;
+            double averageCombustion;
+            double priceOfPetrol;
+            double numberOfKilometer;
+            double addedCost;
 
 
-            if(averageCombustion != null && priceOfPetrol != null && numberOfKilometer != null && averageCombustion != "" && priceOfPetrol != "" && numberOfKilometer != "" )
+            if(Double.TryParse(entryNumberOfKilometer.Text , out numberOfKilometer) && Double.TryParse(entryAddedCost.Text, out addedCost) && Double.TryParse(entryAverageCombustion.Text, out averageCombustion) && Double.TryParse(entryPriceOfPetrol.Text, out priceOfPetrol))
             {
                 _viewModel.ErroMessagIsVisible = false;
-                _viewModel.PriceOfPetrol = (((Convert.ToDouble(averageCombustion) * Convert.ToDouble(priceOfPetrol)) / 100) * Convert.ToDouble(numberOfKilometer)+ ((addedCost is null || addedCost == "") ?0: Convert.ToDouble(addedCost))).ToString();
+                _viewModel.PriceOfPetrol = ((((averageCombustion * priceOfPetrol)/ 100)* numberOfKilometer) +addedCost ).ToString();
             }
             else
             {

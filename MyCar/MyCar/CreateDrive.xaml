@@ -11,35 +11,35 @@
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
                 
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition  Width ="*" />
-                    <ColumnDefinition  Width="50" />
-                    <ColumnDefinition  Width="50" />
-                    <ColumnDefinition  Width="50" />
-                    <ColumnDefinition  Width="50" />
+                    <ColumnDefinition  Width="70" />
+                    <ColumnDefinition  Width="70" />
+                    <ColumnDefinition  Width="70" />
+                    <ColumnDefinition  Width="70" />
                     <ColumnDefinition  Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="1" Grid.Column="1" Text="Dni" />
+                <Label Grid.Row="1"  Grid.Column="1" Text="Dni" />
                 <Label Grid.Row="1"  Grid.Column="2" Text="Godziny" />
                 <Label Grid.Row="1"  Grid.Column="3" Text="Minuty"  />
                 <Label Grid.Row="1"   Grid.Column="4" Text="Sekundy" />
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Time.Days}" />
-                <Label Grid.Row="1"  Grid.Column="2" Text="{Binding Time.Hours}" />
-                <Label Grid.Row="1"  Grid.Column="3" Text="{Binding Time.Minutes}"  />
-                <Label Grid.Row="1"   Grid.Column="4" Text="{Binding Time.Seconds}" />
+                <Label Grid.Row="2" HorizontalTextAlignment = "Center" Grid.Column="1" Text="{Binding Time.Days}" />
+                <Label Grid.Row="2" HorizontalTextAlignment = "Center" Grid.Column="2" Text="{Binding Time.Hours}" />
+                <Label Grid.Row="2" HorizontalTextAlignment = "Center"  Grid.Column="3" Text="{Binding Time.Minutes}"  />
+                <Label Grid.Row="2" HorizontalTextAlignment = "Center"  Grid.Column="4" Text="{Binding Time.Seconds}" />
                
             </Grid>
            
             <Button  Clicked="Start"  BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Start" />
             <Button   Clicked="Stop"  BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Stop" />
             <Button  Clicked="SaveDrive"  BackgroundColor= "#3f51b5"   TextColor="White"  Margin="5,0,5,0" Text = "Zapisz" />
-            
+            <Button  Text="Cofnij"  Clicked="Back_Clicked" />
 
         </StackLayout>
     </ContentPage.Content>

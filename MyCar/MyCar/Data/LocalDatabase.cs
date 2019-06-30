@@ -31,6 +31,7 @@ namespace MyCar.Data
           return await database.Table<Vehicle>().ToListAsync();
       }
 
+       
         internal async Task<Vehicle> GetVehicleById(int id)
         {
             return await database.Table<Vehicle>().Where(x => x.Id == id).FirstOrDefaultAsync();
@@ -57,6 +58,20 @@ namespace MyCar.Data
         {
            
             return await database.Table<HistorySQL>().ToListAsync();
+
+        }
+
+        public async Task<List<Trip>> GetTrip()
+        {
+
+            return await database.Table<Trip>().ToListAsync();
+
+        }
+
+        public async Task<List<Drive>> GetDrive()
+        {
+
+            return await database.Table<Drive>().ToListAsync();
 
         }
 

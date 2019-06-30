@@ -7,7 +7,7 @@
     <TabbedPage.Children>
         <local:History Title="Historia"></local:History>
         <local:Cars Title="Pojazdy"></local:Cars>
-       
+        <local:StatisticPage Title="Statystyka"></local:StatisticPage>
         <local:PetrolCalculator Title="Kalkulator Paliwa"></local:PetrolCalculator>
 
     </TabbedPage.Children>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyCar.Model
 {
-    class Trip : ISqliteModel
+    public class Trip : ISqliteModel
     {
         [SQLite.AutoIncrement, SQLite.PrimaryKey]
         public int Id { get; set; }
@@ -12,6 +12,7 @@ namespace MyCar.Model
         public int NumberOfKm { get; set; }
         public string Destination { get; set; }
         public string StartPoint { get; set; }
+        public DateTime Start { get; set; }
         public DateTime Date { get; set; }
 
     }

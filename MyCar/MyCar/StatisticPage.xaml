@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyCar.StatisticPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+
+                <TableView HorizontalOptions="Center" >
+                    <TableSection  >
+                        <TextCell  Detail="{Binding Vehicle}" Text="Ilość pojazdów"  ></TextCell>
+                        <TextCell Detail="{Binding AllNumberOFKm}" Text="Ilość zrobionych kilometrów"  ></TextCell>
+                        <TextCell Detail="{Binding AllLitrPetrol}" Text="Ilość zatakowanego paliwa w littrach"  ></TextCell>
+                        <TextCell Detail="{Binding AllRidesHour}" Text="Ilość czasu spedzonego w samochodzie"  ></TextCell>
+                    </TableSection>
+                </TableView>
+                <Button  Text="Cofnij"  Clicked="Back_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

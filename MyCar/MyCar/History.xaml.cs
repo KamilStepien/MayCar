@@ -78,8 +78,8 @@ namespace MyCar
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Start: " + TmpTrip.StartPoint  }, 1, 1);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Cel : " + TmpTrip.Destination  }, 2, 1);
                             grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Odległość : " + TmpTrip.NumberOfKm + " km" }, 0, 2);
-                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "5" }, 1, 2);
-                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "6" }, 2, 2);
+                            grid.Children.Add(new Label { HorizontalTextAlignment = TextAlignment.Center, Text = "Start o "  + TmpTrip.Start}, 1, 3 , 2,3);
+           
                             grid.Children.Add(new Label { Margin = new Thickness(0, 5, 0, 0), HorizontalTextAlignment = TextAlignment.Center, BackgroundColor = Color.FromHex("#FF734D"), Text = TmpTrip.Date.ToString("dddd, dd MMMM yyyy") }, 0, 3, 3, 4);
 
                             stackLayout.Children.Add(grid);

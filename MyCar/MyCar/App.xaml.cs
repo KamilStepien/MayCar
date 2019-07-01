@@ -47,7 +47,7 @@ namespace MyCar
         public  App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new CreateEditCar());
+            MainPage = new NavigationPage(new StartPage());
         }
   
       

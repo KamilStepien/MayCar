@@ -21,16 +21,20 @@
                         <EntryCell Label="Srednie spalanie"  Keyboard="Numeric" Text="{Binding LonHundredtKm}" Placeholder=" Spalanie na 100 km"></EntryCell>
                         <ViewCell  >
                             <StackLayout >
-                                <Label Text="Przeglond do"  />
-                                <DatePicker  MinimumDate="{Binding CurrentDateTime}"
+                                <Grid >
+                                    <Label Grid.Column="0" Text="Przegląd do"  />
+                                    <DatePicker Grid.Column="1" MinimumDate="{Binding CurrentDateTime}"
                                 Date="{Binding EndCarReview, Mode=TwoWay }" />
+                                </Grid>
                             </StackLayout> 
                         </ViewCell>
                         <ViewCell  Height="100">
-                            <StackLayout Margin="10,0">
-                                <Label Text="Ubezpeczenie do"  />
-                                <DatePicker  MinimumDate="{Binding CurrentDateTime}"
+                            <StackLayout >
+                                <Grid >
+                                    <Label Grid.Column="0" Text="Ubezpeczenie do"  />
+                                    <DatePicker  Grid.Column="1" MinimumDate="{Binding CurrentDateTime}"
                                 Date="{Binding EndCarInsurance, Mode=TwoWay }" />
+                                </Grid>
                             </StackLayout>
                         </ViewCell>
                     </TableSection>

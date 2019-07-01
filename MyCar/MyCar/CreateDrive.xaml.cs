@@ -43,7 +43,7 @@ namespace MyCar
 
         private void SaveDrive(object sender, EventArgs e)
         {
-
+            end = DateTime.Now;
             Navigation.PushAsync(new DriveAddOtherInformationsPage(_view.Time , start , end));
             App.StopWatch.Reset();
 
